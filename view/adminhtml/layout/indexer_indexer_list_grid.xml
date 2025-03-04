@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="adminhtml.indexer.grid.grid.massaction">
+            <arguments>
+                <argument name="massaction_id_field" xsi:type="string">indexer_id</argument>
+                <argument name="form_field_name" xsi:type="string">indexer_ids</argument>
+                <argument name="use_select_all" xsi:type="string">1</argument>
+                <argument name="options" xsi:type="array">
+                    <updater>Magento\Indexer\Block\Backend\Grid\ItemsUpdater</updater>
+                    <item name="change_mode_onthefly" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Update on Save</item>
+                        <item name="url" xsi:type="string">*/indexer/massOnTheFly</item>
+                    </item>
+                    <item name="change_mode_changelog" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Update by Schedule</item>
+                        <item name="url" xsi:type="string">*/indexer/massChangelog</item>
+                    </item>
+                    <item name="change_mode_reindex" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Reindex Data</item>
+                        <item name="url" xsi:type="string">reindexdata/indexer/massReindexData</item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Kryptalabs\Reindex\Block\Backend\Grid\Indexer" name="content.kryptalabscontent"/>
+        </referenceContainer>
+    </body>
+</page>
