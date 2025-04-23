@@ -2,6 +2,9 @@
     "name": "kryptalabs/reindex-data",
     "description": "Kryptalabs Reindex",
     "type": "magento2-module",
+    "require": {
+	"kryptalabs/core": "1.0.0"
+    },
     "version": "1.0.0",
     "license": [
         "OSL-3.0",
